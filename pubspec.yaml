@@ -87,3 +87,16 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+  fonts:
+    - family: SpoqaHanSansNeo
+      fonts:
+        - asset: assets/font/SpoqaHanSansNeo-Thin.ttf
+          weight: 100
+        - asset: assets/font/SpoqaHanSansNeo-Light.ttf
+          weight: 300
+        - asset: assets/font/SpoqaHanSansNeo-Regular.ttf
+          weight: 400
+        - asset: assets/font/SpoqaHanSansNeo-Medium.ttf
+          weight: 500
+        - asset: assets/font/SpoqaHanSansNeo-Bold.ttf
+          weight: 700
