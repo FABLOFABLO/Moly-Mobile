@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-class MolyColor {
+abstract final class MolyColor {
   static const blue = Color(0xFFAFDCFD);
   static const yellow = Color(0xFFFFEDA6);
   static const pink = Color(0xFFFF9BCB);
