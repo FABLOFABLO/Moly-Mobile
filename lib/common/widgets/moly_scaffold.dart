@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+import 'package:moly_mobile/common/widgets/moly_background.dart';
+import 'package:moly_mobile/core/constants/color.dart';
+
+class MolyScaffold extends StatelessWidget {
+  const MolyScaffold({
+    super.key,
+    required this.body,
+    this.appBar,
+    this.safeArea = true,
+  });
+
+  final Widget body;
+  final PreferredSizeWidget? appBar;
+  final bool safeArea;
+
+  @override
+  Widget build(BuildContext context) {
+    final content = safeArea ? SafeArea(child: body) : body;
+
+    return Scaffold(
+      backgroundColor: MolyColor.background,
+      appBar: appBar,
+      body: Stack(children: [const MolyBackground(), content]),
+    );
+  }
+}
