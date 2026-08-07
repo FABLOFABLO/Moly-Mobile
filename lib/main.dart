@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:moly_mobile/core/constants/color.dart';
 import 'package:moly_mobile/core/router/app_router.dart';
-import 'package:moly_mobile/core/theme/app_theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +16,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'moly_mobile',
-      theme: AppTheme.light,
+      theme: ThemeData(
+        fontFamily: 'SpoqaHanSansNeo',
+        scaffoldBackgroundColor: MolyColor.background,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: MolyColor.brown,
+          primary: MolyColor.brown,
+          error: MolyColor.error,
+        ),
+        useMaterial3: true,
+      ),
       routerConfig: appRouter,
     );
   }
