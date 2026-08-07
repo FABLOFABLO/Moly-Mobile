@@ -27,6 +27,7 @@ flutter:
   assets:
     - .env
     - assets/svg/
+    - assets/png/
 
   fonts:
     - family: SpoqaHanSansNeo
