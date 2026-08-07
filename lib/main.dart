@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:moly_mobile/common/widgets/moly_background.dart';
 import 'package:moly_mobile/core/constants/color.dart';
 import 'package:moly_mobile/core/router/app_router.dart';
 
@@ -15,10 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'moly_mobile',
       theme: ThemeData(
         fontFamily: 'SpoqaHanSansNeo',
-        scaffoldBackgroundColor: MolyColor.background,
+        scaffoldBackgroundColor: Colors.transparent,
         colorScheme: ColorScheme.fromSeed(
           seedColor: MolyColor.brown,
           primary: MolyColor.brown,
@@ -27,6 +29,11 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routerConfig: appRouter,
+      builder: (context, child) {
+        return Stack(
+          children: [const MolyBackground(), ?child],
+        );
+      },
     );
   }
 }
