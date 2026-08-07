@@ -11,6 +11,7 @@ abstract final class MolyColor {
   static const black = Color(0xFF000000);
   static const button = Color(0xFFF9F5EA);
   static const hm = Color(0xFFFFFDF9);
+  static const background = Color(0xFFFFF8F2);
   static const gray50 = Color(0xFFEDEDED);
   static const gray100 = Color(0xFF7A7A7A);
   static const gray200 = Color(0xFFBAB8B7);
