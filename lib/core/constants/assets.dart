@@ -6,3 +6,7 @@ class SvgAssets {
   static const logo = 'assets/svg/moly_logo.svg';
   static const profile = 'assets/svg/profile_icon.svg';
 }
+
+class PngAssets {
+  static const google = 'assets/png/google.png';
+}
