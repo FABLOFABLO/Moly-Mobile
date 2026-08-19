@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 abstract final class MolyColor {
-  static const blue = Color(0xFFAFDCFD);
-  static const yellow = Color(0xFFFFEDA6);
-  static const pink = Color(0xFFFF9BCB);
+  static const blue = Color(0xFFD3E9F0);
+  static const yellow = Color(0xFFFFF5CE);
+  static const pink = Color(0xFFFFE6E4);
   static const brown100 = Color(0xFF9F7B68);
   static const brown300 = Color(0xFF705649);
   static const error = Color(0xFFFF6262);

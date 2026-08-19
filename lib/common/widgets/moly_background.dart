@@ -49,7 +49,7 @@ class _Circle {
         width: size,
         height: size,
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.35),
+          color: color,
           shape: BoxShape.circle,
         ),
       ),
