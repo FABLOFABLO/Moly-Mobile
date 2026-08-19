@@ -8,7 +8,7 @@ import 'package:moly_mobile/features/mypage/presentation/pages/my_page.dart';
 import 'package:moly_mobile/features/onboarding/presentation/pages/onboarding_page.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: '/map',
+  initialLocation: '/',
   routes: [
     GoRoute(path: '/', builder: (_, _) => const OnboardingPage()),
     GoRoute(path: '/signIn', builder: (_, _) => const SignInPage()),
