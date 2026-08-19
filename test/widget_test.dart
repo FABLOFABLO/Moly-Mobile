@@ -7,7 +7,7 @@ void main() {
     await tester.pumpWidget(const MyApp());
     await tester.pumpAndSettle();
 
-    expect(find.text('moly'), findsOneWidget);
     expect(find.text('로그인'), findsOneWidget);
+    expect(find.text('구글로 시작하기'), findsOneWidget);
   });
 }
