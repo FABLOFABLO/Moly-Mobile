@@ -49,7 +49,7 @@ class MolyBottomNavBar extends StatelessWidget {
     bool tintable = true,
   }) {
     final selected = currentIndex == index;
-    final color = selected ? MolyColor.brown : MolyColor.gray200;
+    final color = selected ? MolyColor.brown100 : MolyColor.gray200;
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () => onTap(index),

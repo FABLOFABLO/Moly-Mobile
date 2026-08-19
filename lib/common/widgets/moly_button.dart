@@ -16,7 +16,7 @@ class MolyButton extends StatefulWidget {
     required this.label,
     required this.onPressed,
     this.textStyle,
-    this.backgroundColor = MolyColor.brown,
+    this.backgroundColor = MolyColor.brown100,
     this.height = 56,
     this.hasBorder = false,
     this.icon,
@@ -69,7 +69,7 @@ class _MolyButtonState extends State<MolyButton> {
           color: _backgroundColor,
           borderRadius: BorderRadius.circular(40),
           border: widget.hasBorder
-              ? Border.all(color: MolyColor.brown, width: 1)
+              ? Border.all(color: MolyColor.brown100, width: 1)
               : null,
         ),
         child: widget.icon == null

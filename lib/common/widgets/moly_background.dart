@@ -18,7 +18,7 @@ class MolyBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned.fill(
       child: ColoredBox(
-        color: MolyColor.background,
+        color: MolyColor.mn,
         child: Stack(children: [for (final c in _circles) c.build()]),
       ),
     );

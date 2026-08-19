@@ -19,7 +19,7 @@ class MolyScaffold extends StatelessWidget {
     final content = safeArea ? SafeArea(child: body) : body;
 
     return Scaffold(
-      backgroundColor: MolyColor.background,
+      backgroundColor: MolyColor.mn,
       appBar: appBar,
       body: Stack(children: [const MolyBackground(), content]),
     );

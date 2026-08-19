@@ -37,7 +37,7 @@ class OnboardingPage extends StatelessWidget {
                   child: Text(
                     '회원가입',
                     style: MolyTextStyle.captionBold.copyWith(
-                      color: MolyColor.brown,
+                      color: MolyColor.brown100,
                     ),
                   ),
                 ),
@@ -58,7 +58,7 @@ class OnboardingPage extends StatelessWidget {
               backgroundColor: MolyColor.white,
               hasBorder: true,
               textStyle: MolyTextStyle.buttonBold.copyWith(
-                color: MolyColor.brown,
+                color: MolyColor.brown100,
               ),
               icon: Image.asset(PngAssets.google),
             ),
