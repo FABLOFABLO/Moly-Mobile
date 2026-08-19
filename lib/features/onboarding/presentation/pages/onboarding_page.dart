@@ -55,8 +55,10 @@ class OnboardingPage extends StatelessWidget {
             const SizedBox(height: 12),
             MolyButton(
               label: '구글로 시작하기',
-              onPressed: () {},
-              // TODO: oauth 연동
+              onPressed: () {
+                // TODO: oauth 연동
+                context.go('/map');
+              },
               backgroundColor: MolyColor.white,
               hasBorder: true,
               textStyle: MolyTextStyle.buttonBold.copyWith(
