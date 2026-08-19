@@ -8,11 +8,13 @@ class MolyScaffold extends StatelessWidget {
     required this.body,
     this.appBar,
     this.safeArea = true,
+    this.backgroundVariant = MolyBackgroundVariant.one,
   });
 
   final Widget body;
   final PreferredSizeWidget? appBar;
   final bool safeArea;
+  final MolyBackgroundVariant backgroundVariant;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,12 @@ class MolyScaffold extends StatelessWidget {
     return Scaffold(
       backgroundColor: MolyColor.mn,
       appBar: appBar,
-      body: Stack(children: [const MolyBackground(), content]),
+      body: Stack(
+        children: [
+          MolyBackground(variant: backgroundVariant),
+          content,
+        ],
+      ),
     );
   }
 }

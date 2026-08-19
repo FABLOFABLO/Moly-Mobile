@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:moly_mobile/common/widgets/moly_background.dart';
 import 'package:moly_mobile/common/widgets/moly_button.dart';
 import 'package:moly_mobile/common/widgets/moly_scaffold.dart';
 import 'package:moly_mobile/core/constants/assets.dart';
@@ -13,6 +14,7 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MolyScaffold(
+      backgroundVariant: MolyBackgroundVariant.one,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
