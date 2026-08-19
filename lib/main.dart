@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:kakao_map_sdk/kakao_map_sdk.dart';
 import 'package:moly_mobile/core/constants/color.dart';
-import 'package:moly_mobile/core/env/app_env.dart';
 import 'package:moly_mobile/core/router/app_router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: '.env');
-  await KakaoMapSdk.instance.initialize(AppEnv.kakaoApiKey);
   runApp(const MyApp());
 }
 
