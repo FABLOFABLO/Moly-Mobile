@@ -15,25 +15,29 @@ class _MapPageState extends State<MapPage> {
   KakaoMapController? _controller;
 
   Future<void> _moveToCurrentLocation() async {
-    final position = await _currentPosition();
-    final controller = _controller;
-    if (position == null || controller == null || !mounted) return;
+    try {
+      final position = await _currentPosition();
+      final controller = _controller;
+      if (position == null || controller == null || !mounted) return;
 
-    final latLng = LatLng(position.latitude, position.longitude);
-    await controller.moveCamera(
-      CameraUpdate.newCenterPosition(latLng, zoomLevel: 18),
-    );
+      final latLng = LatLng(position.latitude, position.longitude);
+      await controller.moveCamera(
+        CameraUpdate.newCenterPosition(latLng, zoomLevel: 18),
+      );
 
-    if (!mounted) return;
-    final icon = await KImage.fromWidget(
-      const LocationDot(),
-      const Size(60, 60),
-      context: context,
-    );
-    await controller.labelLayer.addPoi(
-      latLng,
-      style: PoiStyle(icon: icon, anchor: const KPoint(0.5, 0.3)),
-    );
+      if (!mounted) return;
+      final icon = await KImage.fromWidget(
+        const LocationDot(),
+        const Size(60, 60),
+        context: context,
+      );
+      await controller.labelLayer.addPoi(
+        latLng,
+        style: PoiStyle(icon: icon, anchor: const KPoint(0.5, 0.3)),
+      );
+    } catch (e) {
+      debugPrint('현재 위치 이동 실패: $e');
+    }
   }
 
   Future<Position?> _currentPosition() async {
