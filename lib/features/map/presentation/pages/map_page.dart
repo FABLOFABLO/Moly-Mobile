@@ -3,6 +3,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:kakao_map_sdk/kakao_map_sdk.dart';
 import 'package:moly_mobile/features/map/presentation/widgets/location_dot.dart';
 import 'package:moly_mobile/features/map/presentation/widgets/map_fab.dart';
+import 'package:moly_mobile/features/map/presentation/widgets/my_location_button.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
@@ -14,7 +15,7 @@ class MapPage extends StatefulWidget {
 class _MapPageState extends State<MapPage> {
   KakaoMapController? _controller;
 
-  Future<void> _moveToCurrentLocation() async {
+  Future<void> _goToCurrentLocation({bool addMarker = false}) async {
     try {
       final position = await _currentPosition();
       final controller = _controller;
@@ -23,9 +24,10 @@ class _MapPageState extends State<MapPage> {
       final latLng = LatLng(position.latitude, position.longitude);
       await controller.moveCamera(
         CameraUpdate.newCenterPosition(latLng, zoomLevel: 18),
+        animation: const CameraAnimation(500),
       );
 
-      if (!mounted) return;
+      if (!addMarker || !mounted) return;
       final icon = await KImage.fromWidget(
         const LocationDot(),
         const Size(60, 60),
@@ -68,8 +70,16 @@ class _MapPageState extends State<MapPage> {
             ),
             onMapReady: (controller) {
               _controller = controller;
-              _moveToCurrentLocation();
+              _goToCurrentLocation(addMarker: true);
             },
+          ),
+          Positioned(
+            top: 0,
+            bottom: 0,
+            right: 20,
+            child: Center(
+              child: MyLocationButton(onTap: _goToCurrentLocation),
+            ),
           ),
           const MapFab(),
         ],
