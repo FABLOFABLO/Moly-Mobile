@@ -14,7 +14,7 @@ class MyLocationButton extends StatelessWidget {
         width: 40,
         height: 40,
         decoration: BoxDecoration(
-          color: MolyColor.white,
+          color: MolyColor.hm,
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
