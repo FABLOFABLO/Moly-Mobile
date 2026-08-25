@@ -5,6 +5,7 @@ class SvgAssets {
   static const moleUnselected = 'assets/svg/mole_icon_unselected.svg';
   static const logo = 'assets/svg/moly_logo.svg';
   static const profile = 'assets/svg/profile_icon.svg';
+  static const back = 'assets/svg/back_icon.svg';
 }
 
 class PngAssets {
