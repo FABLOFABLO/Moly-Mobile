@@ -9,11 +9,11 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: '.env', isOptional: true);
 
-  // final kakaoApiKey = AppEnv.kakaoApiKey;
-  // if (kakaoApiKey.isEmpty) {
-  //   throw StateError('KAKAO_API_KEY가 비어 있습니다. .env 파일을 확인하세요.');
-  // }
-  // await KakaoMapSdk.instance.initialize(kakaoApiKey);
+  final kakaoApiKey = AppEnv.kakaoApiKey;
+  if (kakaoApiKey.isEmpty) {
+    throw StateError('KAKAO_API_KEY가 비어 있습니다. .env 파일을 확인하세요.');
+  }
+  await KakaoMapSdk.instance.initialize(kakaoApiKey);
 
   runApp(const MyApp());
 }
