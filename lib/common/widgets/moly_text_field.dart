@@ -105,11 +105,14 @@ class _MolyTextFieldState extends State<MolyTextField> {
                             _obscureText = !_obscureText;
                           });
                         },
-                        icon: Icon(
-                          _obscureText
-                              ? Icons.visibility_off_outlined
-                              : Icons.visibility_outlined,
-                          color: MolyColor.brown100,
+                        icon: Padding(
+                          padding: const EdgeInsets.only(right: 15.0),
+                          child: Icon(
+                            _obscureText
+                                ? Icons.visibility_off_outlined
+                                : Icons.visibility_outlined,
+                            color: MolyColor.brown100,
+                          ),
                         ),
                       )
                     : null,
