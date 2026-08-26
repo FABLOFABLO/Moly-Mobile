@@ -40,10 +40,8 @@ class _SignUpPage3State extends State<SignUpPage3> {
                     MolyTextField(
                       text: '사용자 닉네임',
                       hintText: '사용자 닉네임을 입력해주세요',
-                      hasIcon: false,
                       controller: _nickNameController,
                       minline: 1,
-                      big: false,
                     ),
                     const SizedBox(height: 405),
                     Padding(

@@ -4,7 +4,6 @@ import 'package:moly_mobile/common/widgets/moly_app_bar.dart';
 import 'package:moly_mobile/common/widgets/moly_button.dart';
 import 'package:moly_mobile/common/widgets/moly_scaffold.dart';
 import 'package:moly_mobile/common/widgets/moly_text_field.dart';
-import 'package:moly_mobile/features/auth/presentation/widgets/pw_text_field.dart';
 
 class SignUpPage2 extends StatefulWidget {
   const SignUpPage2({super.key});
@@ -23,7 +22,6 @@ class _SignUpPage2State extends State<SignUpPage2> {
   @override
   void initState() {
     super.initState();
-
     _passwordController.addListener(_validatePasswordMatch);
     _checkPasswordController.addListener(_validatePasswordMatch);
   }
@@ -64,7 +62,6 @@ class _SignUpPage2State extends State<SignUpPage2> {
         body: Column(
           children: [
             MolyAppBar(label: '회원가입'),
-
             Expanded(
               child: SingleChildScrollView(
                 keyboardDismissBehavior:
@@ -74,16 +71,13 @@ class _SignUpPage2State extends State<SignUpPage2> {
                     MolyTextField(
                       text: '비밀번호',
                       hintText: '비밀번호를 입력해주세요',
-                      hasIcon: false,
                       controller: _passwordController,
                       minline: 1,
-                      big: false,
                     ),
                     const SizedBox(height: 20),
-                    PwTextField(
+                    MolyTextField(
                       text: '비밀번호 확인',
                       hintText: '비밀번호를 입력해주세요',
-                      hasIcon: false,
                       controller: _checkPasswordController,
                       minline: 1,
                       hasError: _hasPasswordCheckError,

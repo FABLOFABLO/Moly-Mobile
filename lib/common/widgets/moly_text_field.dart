@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moly_mobile/core/constants/text_style.dart';
 import 'package:moly_mobile/core/constants/color.dart';
+import 'package:moly_mobile/core/constants/text_style.dart';
 
 class MolyTextField extends StatefulWidget {
   final String text;
@@ -12,18 +12,22 @@ class MolyTextField extends StatefulWidget {
   final ValueChanged<String>? onSubmitted;
   final int minline;
   final bool big;
+  final bool hasError;
+  final String errorText;
 
   const MolyTextField({
     super.key,
     required this.text,
     required this.hintText,
-    required this.hasIcon,
+    this.hasIcon = false,
     required this.controller,
     this.focusNode,
     this.textInputAction = TextInputAction.next,
     this.onSubmitted,
     required this.minline,
-    required this.big,
+    this.big = false,
+    this.hasError = false,
+    this.errorText = '비밀번호가 일치하지 않습니다.',
   });
 
   @override
@@ -48,13 +52,18 @@ class _MolyTextFieldState extends State<MolyTextField> {
         children: [
           Text(
             widget.text,
-            style: MolyTextStyle.captionMedium.copyWith(color: MolyColor.gray500)
+            style: MolyTextStyle.captionMedium.copyWith(
+              color: MolyColor.gray500,
+            ),
           ),
           const SizedBox(height: 12),
           SizedBox(
             width: double.infinity,
             child: TextField(
-              style: MolyTextStyle.captionMedium.copyWith(color: MolyColor.gray500),
+              obscuringCharacter: '●',
+              style: MolyTextStyle.captionMedium.copyWith(
+                color: MolyColor.gray500,
+              ),
               minLines: widget.minline,
               maxLines: widget.minline,
               cursorHeight: 16,
@@ -70,21 +79,65 @@ class _MolyTextFieldState extends State<MolyTextField> {
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
-                  borderSide: BorderSide(color: MolyColor.button),
+                  borderSide: BorderSide(
+                    color: widget.hasError ? MolyColor.error : MolyColor.button,
+                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
-                  borderSide: BorderSide(color: MolyColor.button, width: 2.0),
+                  borderSide: BorderSide(
+                    color: widget.hasError ? MolyColor.error : MolyColor.button,
+                    width: 2,
+                  ),
                 ),
                 hintText: widget.hintText,
                 hintStyle: TextStyle(color: MolyColor.gray200, fontSize: 14),
                 filled: true,
                 fillColor: MolyColor.button,
-                contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 10,
+                ),
+                suffixIcon: widget.hasIcon
+                    ? IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _obscureText = !_obscureText;
+                          });
+                        },
+                        icon: Icon(
+                          _obscureText
+                              ? Icons.visibility_off_outlined
+                              : Icons.visibility_outlined,
+                          color: MolyColor.brown100,
+                        ),
+                      )
+                    : null,
+                suffixIconConstraints: const BoxConstraints(
+                  minWidth: 44,
+                  minHeight: 44,
+                ),
               ),
             ),
           ),
-          const SizedBox(height: 10,)
+          if (widget.hasError)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: Row(
+                children: [
+                  Icon(Icons.error, color: MolyColor.error, size: 13),
+                  const SizedBox(width: 2),
+                  Text(
+                    widget.errorText,
+                    style: MolyTextStyle.caption1Medium.copyWith(
+                      color: MolyColor.error,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          else
+            const SizedBox(height: 10),
         ],
       ),
     );
