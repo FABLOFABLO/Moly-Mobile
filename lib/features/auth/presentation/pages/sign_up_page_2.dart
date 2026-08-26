@@ -87,7 +87,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                       padding: const EdgeInsets.symmetric(horizontal: 24),
                       child: MolyButton(
                         label: '다음',
-                        onPressed: () => context.push('/signUp_3'),
+                        onPressed: () => context.push('/signUp3'),
                       ),
                     ),
                     const SizedBox(height: 50),

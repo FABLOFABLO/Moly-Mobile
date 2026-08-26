@@ -14,7 +14,7 @@ final GoRouter appRouter = GoRouter(
   routes: [
     GoRoute(path: '/', builder: (_, _) => const OnboardingPage()),
     GoRoute(path: '/signIn', builder: (_, _) => const SignInPage()),
-    GoRoute(path: '/signUp', builder: (_, _) => const SignUpPage()),
+    GoRoute(path: '/signUp1', builder: (_, _) => const SignUpPage()),
     GoRoute(path: '/signUp2', builder: (_, _) => const SignUpPage2()),
     GoRoute(path: '/signUp3', builder: (_, _) => const SignUpPage3()),
     StatefulShellRoute.indexedStack(
