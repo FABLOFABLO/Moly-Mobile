@@ -11,7 +11,6 @@ class MolyTextField extends StatefulWidget {
   final TextInputAction textInputAction;
   final ValueChanged<String>? onSubmitted;
   final int minline;
-  final bool big;
   final bool hasError;
   final String errorText;
 
@@ -25,7 +24,6 @@ class MolyTextField extends StatefulWidget {
     this.textInputAction = TextInputAction.next,
     this.onSubmitted,
     required this.minline,
-    this.big = false,
     this.hasError = false,
     this.errorText = '비밀번호가 일치하지 않습니다.',
   });
