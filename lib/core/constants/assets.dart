@@ -6,6 +6,8 @@ class SvgAssets {
   static const logo = 'assets/svg/moly_logo.svg';
   static const profile = 'assets/svg/profile_icon.svg';
   static const back = 'assets/svg/back_icon.svg';
+  static const memoDelete = 'assets/svg/memo_delete_icon.svg';
+  static const memoEdit = 'assets/svg/memo_edit_icon.svg';
 }
 
 class PngAssets {

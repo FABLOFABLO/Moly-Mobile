@@ -4,6 +4,7 @@ import 'package:moly_mobile/common/widgets/moly_app_bar.dart';
 import 'package:moly_mobile/common/widgets/moly_button.dart';
 import 'package:moly_mobile/common/widgets/moly_scaffold.dart';
 import 'package:moly_mobile/common/widgets/moly_text_field.dart';
+import 'package:moly_mobile/core/constants/text_style.dart';
 
 class SignUpPage2 extends StatefulWidget {
   const SignUpPage2({super.key});
@@ -61,13 +62,22 @@ class _SignUpPage2State extends State<SignUpPage2> {
       child: MolyScaffold(
         body: Column(
           children: [
-            MolyAppBar(label: '회원가입'),
+            MolyAppBar(type: MolyAppBarType.auth),
             Expanded(
               child: SingleChildScrollView(
                 keyboardDismissBehavior:
                     ScrollViewKeyboardDismissBehavior.onDrag,
                 child: Column(
                   children: [
+                    const SizedBox(height: 20,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const SizedBox(width: 24,),
+                        Text('회원가입', style: MolyTextStyle.headline3),
+                      ],
+                    ),
+                    const SizedBox(height: 40,),
                     MolyTextField(
                       text: '비밀번호',
                       hintText: '비밀번호를 입력해주세요',

@@ -34,11 +34,20 @@ class _SignInPageState extends State<SignInPage> {
       child: MolyScaffold(
         body: Column(
           children: [
-            MolyAppBar(label: '로그인'),
+            MolyAppBar(type: MolyAppBarType.auth),
             Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
+                      const SizedBox(height: 20,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          const SizedBox(width: 24,),
+                          Text('로그인', style: MolyTextStyle.headline3),
+                        ],
+                      ),
+                      const SizedBox(height: 40,),
                       MolyTextField(
                         text: '닉네임',
                         hintText: '닉네임을 입력해주세요',
