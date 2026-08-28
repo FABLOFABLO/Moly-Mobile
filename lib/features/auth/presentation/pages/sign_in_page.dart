@@ -65,7 +65,12 @@ class _SignInPageState extends State<SignInPage> {
                     const SizedBox(height: 300),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: MolyButton(label: '로그인', onPressed: () {}),
+                      child: MolyButton(
+                        label: '로그인',
+                        onPressed: () {
+                          // TODO: 로그인 API 연동
+                        },
+                      ),
                     ),
                     const SizedBox(height: 50),
                   ],

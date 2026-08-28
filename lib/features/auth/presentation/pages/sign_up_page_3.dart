@@ -34,18 +34,18 @@ class _SignUpPage3State extends State<SignUpPage3> {
             Expanded(
               child: SingleChildScrollView(
                 keyboardDismissBehavior:
-                ScrollViewKeyboardDismissBehavior.onDrag,
+                    ScrollViewKeyboardDismissBehavior.onDrag,
                 child: Column(
                   children: [
-                    const SizedBox(height: 20,),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const SizedBox(width: 24,),
+                        const SizedBox(width: 24),
                         Text('회원가입', style: MolyTextStyle.headline3),
                       ],
                     ),
-                    const SizedBox(height: 40,),
+                    const SizedBox(height: 40),
                     MolyTextField(
                       text: '사용자 닉네임',
                       hintText: '사용자 닉네임을 입력해주세요',
@@ -55,7 +55,12 @@ class _SignUpPage3State extends State<SignUpPage3> {
                     const SizedBox(height: 405),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: MolyButton(label: '회원가입', onPressed: () {}),
+                      child: MolyButton(
+                        label: '회원가입',
+                        onPressed: () {
+                          // TODO: 회원가입 API 연동
+                        },
+                      ),
                     ),
                     const SizedBox(height: 50),
                   ],
