@@ -53,7 +53,7 @@ class _SignInPageState extends State<SignUpPage> {
                       text: '이메일',
                       hintText: '이메일을 입력해주세요',
                       controller: _nickNameController,
-                      minline: 1,
+                      minLine: 1,
                     ),
                     const SizedBox(height: 405),
                     Padding(

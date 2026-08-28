@@ -10,11 +10,12 @@ class MolyTextField extends StatefulWidget {
   final FocusNode? focusNode;
   final TextInputAction textInputAction;
   final ValueChanged<String>? onSubmitted;
-  final int minline;
+  final int minLine;
+  final int? maxLine;
   final bool hasError;
   final String errorText;
 
-  const MolyTextField({
+  const MolyTextField( {
     super.key,
     required this.text,
     required this.hintText,
@@ -23,7 +24,8 @@ class MolyTextField extends StatefulWidget {
     this.focusNode,
     this.textInputAction = TextInputAction.next,
     this.onSubmitted,
-    required this.minline,
+    this.maxLine,
+    required this.minLine,
     this.hasError = false,
     this.errorText = '비밀번호가 일치하지 않습니다.',
   });
@@ -62,8 +64,8 @@ class _MolyTextFieldState extends State<MolyTextField> {
               style: MolyTextStyle.captionMedium.copyWith(
                 color: MolyColor.gray500,
               ),
-              minLines: widget.minline,
-              maxLines: widget.minline,
+              minLines: widget.minLine,
+              maxLines: widget.maxLine ?? widget.minLine,
               cursorHeight: 16,
               cursorColor: MolyColor.brown100,
               controller: widget.controller,

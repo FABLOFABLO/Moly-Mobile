@@ -36,42 +36,42 @@ class _SignInPageState extends State<SignInPage> {
           children: [
             MolyAppBar(type: MolyAppBarType.auth),
             Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 20,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const SizedBox(width: 24,),
-                          Text('로그인', style: MolyTextStyle.headline3),
-                        ],
-                      ),
-                      const SizedBox(height: 40,),
-                      MolyTextField(
-                        text: '닉네임',
-                        hintText: '닉네임을 입력해주세요',
-                        controller: _nickNameController,
-                        minline: 1,
-                      ),
-                      const SizedBox(height: 20),
-                      MolyTextField(
-                        text: '비밀번호',
-                        hintText: '비밀번호를 입력해주세요',
-                        controller: _passwordController,
-                        minline: 1,
-                        hasIcon: true,
-                      ),
-                      const SizedBox(height: 300),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
-                        child: MolyButton(label: '로그인', onPressed: () {}),
-                      ),
-                      const SizedBox(height: 50),
-                    ],
-                  ),
-                ))
-
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const SizedBox(width: 24),
+                        Text('로그인', style: MolyTextStyle.headline3),
+                      ],
+                    ),
+                    const SizedBox(height: 40),
+                    MolyTextField(
+                      text: '닉네임',
+                      hintText: '닉네임을 입력해주세요',
+                      controller: _nickNameController,
+                      minLine: 1,
+                    ),
+                    const SizedBox(height: 20),
+                    MolyTextField(
+                      text: '비밀번호',
+                      hintText: '비밀번호를 입력해주세요',
+                      controller: _passwordController,
+                      minLine: 1,
+                      hasIcon: true,
+                    ),
+                    const SizedBox(height: 300),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: MolyButton(label: '로그인', onPressed: () {}),
+                    ),
+                    const SizedBox(height: 50),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
