@@ -64,45 +64,58 @@ class _SignUpPage2State extends State<SignUpPage2> {
           children: [
             MolyAppBar(type: MolyAppBarType.auth),
             Expanded(
-              child: SingleChildScrollView(
-                keyboardDismissBehavior:
-                    ScrollViewKeyboardDismissBehavior.onDrag,
-                child: Column(
-                  children: [
-                    const SizedBox(height: 20,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const SizedBox(width: 24,),
-                        Text('회원가입', style: MolyTextStyle.headline3),
-                      ],
-                    ),
-                    const SizedBox(height: 40,),
-                    MolyTextField(
-                      text: '비밀번호',
-                      hintText: '비밀번호를 입력해주세요',
-                      controller: _passwordController,
-                      minLine: 1,
-                    ),
-                    const SizedBox(height: 20),
-                    MolyTextField(
-                      text: '비밀번호 확인',
-                      hintText: '비밀번호를 입력해주세요',
-                      controller: _checkPasswordController,
-                      minLine: 1,
-                      hasError: _hasPasswordCheckError,
-                    ),
-                    const SizedBox(height: 305),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: MolyButton(
-                        label: '다음',
-                        onPressed: () => context.push('/signUp3'),
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  return SingleChildScrollView(
+                    keyboardDismissBehavior:
+                        ScrollViewKeyboardDismissBehavior.onDrag,
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: constraints.maxHeight,
+                      ),
+                      child: IntrinsicHeight(
+                        child: Column(
+                          children: [
+                            const SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const SizedBox(width: 24),
+                                Text('회원가입', style: MolyTextStyle.headline3),
+                              ],
+                            ),
+                            const SizedBox(height: 40),
+                            MolyTextField(
+                              text: '비밀번호',
+                              hintText: '비밀번호를 입력해주세요',
+                              controller: _passwordController,
+                              minLine: 1,
+                            ),
+                            const SizedBox(height: 20),
+                            MolyTextField(
+                              text: '비밀번호 확인',
+                              hintText: '비밀번호를 입력해주세요',
+                              controller: _checkPasswordController,
+                              minLine: 1,
+                              hasError: _hasPasswordCheckError,
+                            ),
+                            const Spacer(),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 24,
+                              ),
+                              child: MolyButton(
+                                label: '다음',
+                                onPressed: () => context.push('/signUp3'),
+                              ),
+                            ),
+                            const SizedBox(height: 80),
+                          ],
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 50),
-                  ],
-                ),
+                  );
+                },
               ),
             ),
           ],

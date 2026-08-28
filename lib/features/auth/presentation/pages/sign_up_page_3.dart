@@ -32,39 +32,52 @@ class _SignUpPage3State extends State<SignUpPage3> {
           children: [
             MolyAppBar(type: MolyAppBarType.auth),
             Expanded(
-              child: SingleChildScrollView(
-                keyboardDismissBehavior:
-                    ScrollViewKeyboardDismissBehavior.onDrag,
-                child: Column(
-                  children: [
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const SizedBox(width: 24),
-                        Text('회원가입', style: MolyTextStyle.headline3),
-                      ],
-                    ),
-                    const SizedBox(height: 40),
-                    MolyTextField(
-                      text: '사용자 닉네임',
-                      hintText: '사용자 닉네임을 입력해주세요',
-                      controller: _nickNameController,
-                      minLine: 1,
-                    ),
-                    const SizedBox(height: 405),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: MolyButton(
-                        label: '회원가입',
-                        onPressed: () {
-                          // TODO: 회원가입 API 연동
-                        },
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  return SingleChildScrollView(
+                    keyboardDismissBehavior:
+                        ScrollViewKeyboardDismissBehavior.onDrag,
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: constraints.maxHeight,
+                      ),
+                      child: IntrinsicHeight(
+                        child: Column(
+                          children: [
+                            const SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const SizedBox(width: 24),
+                                Text('회원가입', style: MolyTextStyle.headline3),
+                              ],
+                            ),
+                            const SizedBox(height: 40),
+                            MolyTextField(
+                              text: '사용자 닉네임',
+                              hintText: '사용자 닉네임을 입력해주세요',
+                              controller: _nickNameController,
+                              minLine: 1,
+                            ),
+                            const Spacer(),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 24,
+                              ),
+                              child: MolyButton(
+                                label: '회원가입',
+                                onPressed: () {
+                                  // TODO: 회원가입 API 연동
+                                },
+                              ),
+                            ),
+                            const SizedBox(height: 80),
+                          ],
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 50),
-                  ],
-                ),
+                  );
+                },
               ),
             ),
           ],

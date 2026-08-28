@@ -37,35 +37,48 @@ class _SignInPageState extends State<SignUpPage> {
           children: [
             MolyAppBar(type: MolyAppBarType.auth),
             Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const SizedBox(height: 20,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const SizedBox(width: 24,),
-                        Text('회원가입', style: MolyTextStyle.headline3),
-                      ],
-                    ),
-                    const SizedBox(height: 40,),
-                    MolyTextField(
-                      text: '이메일',
-                      hintText: '이메일을 입력해주세요',
-                      controller: _nickNameController,
-                      minLine: 1,
-                    ),
-                    const SizedBox(height: 405),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: MolyButton(
-                        label: '다음',
-                        onPressed: () => context.push('/signUp2'),
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  return SingleChildScrollView(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: constraints.maxHeight,
+                      ),
+                      child: IntrinsicHeight(
+                        child: Column(
+                          children: [
+                            const SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const SizedBox(width: 24),
+                                Text('회원가입', style: MolyTextStyle.headline3),
+                              ],
+                            ),
+                            const SizedBox(height: 40),
+                            MolyTextField(
+                              text: '이메일',
+                              hintText: '이메일을 입력해주세요',
+                              controller: _nickNameController,
+                              minLine: 1,
+                            ),
+                            const Spacer(),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 24,
+                              ),
+                              child: MolyButton(
+                                label: '다음',
+                                onPressed: () => context.push('/signUp2'),
+                              ),
+                            ),
+                            const SizedBox(height: 80),
+                          ],
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 50),
-                  ],
-                ),
+                  );
+                },
               ),
             ),
           ],
