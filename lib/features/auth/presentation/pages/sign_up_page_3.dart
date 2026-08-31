@@ -5,8 +5,6 @@ import 'package:moly_mobile/common/widgets/moly_scaffold.dart';
 import 'package:moly_mobile/common/widgets/moly_text_field.dart';
 import 'package:moly_mobile/core/constants/text_style.dart';
 
-import '../widgets/appbar_back_button.dart';
-
 class SignUpPage3 extends StatefulWidget {
   const SignUpPage3({super.key});
 
@@ -32,7 +30,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
       child: MolyScaffold(
         body: Column(
           children: [
-            MolyAppBar(leading: AppBarBackButton(), down: true, height: 80,),
+            MolyAppBar(hasDown: true, height: 80, hasBack: true),
             Expanded(
               child: LayoutBuilder(
                 builder: (context, constraints) {
