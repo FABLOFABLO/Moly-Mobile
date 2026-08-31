@@ -34,7 +34,7 @@ class OnboardingPage extends StatelessWidget {
                 const SizedBox(width: 6),
                 GestureDetector(
                   onTap: () {
-                    context.push('/signUp');
+                    context.push('/signUp1');
                   },
                   child: Text(
                     '회원가입',

@@ -9,7 +9,7 @@ abstract final class MolyColor {
   static const error = Color(0xFFFF6262);
   static const white = Color(0xFFFFFFFF);
   static const black = Color(0xFF000000);
-  static const button = Color(0xFFF9F5EA);
+  static const button = Color(0xFFF8EEE7);
   static const hm = Color(0xFFFFFDF9);
   static const mn = Color(0xFFFFF8F2);
   static const gray50 = Color(0xFFEDEDED);
