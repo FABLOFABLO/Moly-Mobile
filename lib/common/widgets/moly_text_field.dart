@@ -91,7 +91,7 @@ class _MolyTextFieldState extends State<MolyTextField> {
                   ),
                 ),
                 hintText: widget.hintText,
-                hintStyle: TextStyle(color: MolyColor.gray200, fontSize: 14),
+                hintStyle: const TextStyle(color: MolyColor.gray200, fontSize: 14),
                 filled: true,
                 fillColor: MolyColor.button,
                 contentPadding: const EdgeInsets.symmetric(
