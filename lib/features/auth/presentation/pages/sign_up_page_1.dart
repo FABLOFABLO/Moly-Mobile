@@ -35,7 +35,7 @@ class _SignInPageState extends State<SignUpPage> {
       child: MolyScaffold(
         body: Column(
           children: [
-            MolyAppBar(hasDown: true, height: 80, hasBack: true),
+            const MolyAppBar(hasDown: true, height: 80, hasBack: true),
             Expanded(
               child: LayoutBuilder(
                 builder: (context, constraints) {
@@ -48,14 +48,14 @@ class _SignInPageState extends State<SignUpPage> {
                         child: Column(
                           children: [
                             const SizedBox(height: 20),
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                const SizedBox(width: 24),
+                                SizedBox(width: 24),
                                 Text('회원가입', style: MolyTextStyle.headline3),
                               ],
                             ),
-                            const SizedBox(height: 40),
+                            const SizedBox(height: 34),
                             MolyTextField(
                               text: '이메일',
                               hintText: '이메일을 입력해주세요',
@@ -70,9 +70,10 @@ class _SignInPageState extends State<SignUpPage> {
                               child: MolyButton(
                                 label: '다음',
                                 onPressed: () => context.push('/signUp2'),
+                                // TODO: 회원가입 API 연동
                               ),
                             ),
-                            const SizedBox(height: 80),
+                            const SizedBox(height: 46),
                           ],
                         ),
                       ),

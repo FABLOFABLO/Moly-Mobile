@@ -30,7 +30,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
       child: MolyScaffold(
         body: Column(
           children: [
-            MolyAppBar(hasDown: true, height: 80, hasBack: true),
+            const MolyAppBar(hasDown: true, height: 80, hasBack: true),
             Expanded(
               child: LayoutBuilder(
                 builder: (context, constraints) {
@@ -45,14 +45,14 @@ class _SignUpPage3State extends State<SignUpPage3> {
                         child: Column(
                           children: [
                             const SizedBox(height: 20),
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                const SizedBox(width: 24),
+                                SizedBox(width: 24),
                                 Text('회원가입', style: MolyTextStyle.headline3),
                               ],
                             ),
-                            const SizedBox(height: 40),
+                            const SizedBox(height: 34),
                             MolyTextField(
                               text: '사용자 닉네임',
                               hintText: '사용자 닉네임을 입력해주세요',
@@ -71,7 +71,7 @@ class _SignUpPage3State extends State<SignUpPage3> {
                                 },
                               ),
                             ),
-                            const SizedBox(height: 80),
+                            const SizedBox(height: 46),
                           ],
                         ),
                       ),

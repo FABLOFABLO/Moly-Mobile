@@ -17,7 +17,7 @@ class MolyButton extends StatefulWidget {
     required this.onPressed,
     this.textStyle,
     this.backgroundColor = MolyColor.brown100,
-    this.height = 56,
+    this.height = 52,
     this.hasBorder = false,
     this.icon,
   });
