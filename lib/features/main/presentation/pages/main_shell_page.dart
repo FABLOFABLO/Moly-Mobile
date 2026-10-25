@@ -10,6 +10,7 @@ class MainShellPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: navigationShell,
       bottomNavigationBar: MolyBottomNavBar(
         currentIndex: navigationShell.currentIndex,

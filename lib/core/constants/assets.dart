@@ -8,6 +8,8 @@ class SvgAssets {
   static const back = 'assets/svg/back_icon.svg';
   static const memoDelete = 'assets/svg/memo_delete_icon.svg';
   static const memoEdit = 'assets/svg/memo_edit_icon.svg';
+  static const pin = 'assets/svg/pin.svg';
+  static const pinSelected = 'assets/svg/pin_selected.svg';
 }
 
 class PngAssets {
