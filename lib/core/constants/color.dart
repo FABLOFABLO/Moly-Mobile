@@ -13,7 +13,7 @@ abstract final class MolyColor {
   static const hm = Color(0xFFFFFDF9);
   static const mn = Color(0xFFFFF8F2);
   static const gray50 = Color(0xFFEDEDED);
-  static const gray100 = Color(0xFF7A7A7A);
+  static const gray100 = Color(0xFFD9D7D6);
   static const gray200 = Color(0xFFBAB8B7);
   static const gray300 = Color(0xFF908F8F);
   static const gray400 = Color(0xFF6D6B6B);
