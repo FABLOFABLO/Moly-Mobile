@@ -43,9 +43,7 @@ class _MapFabState extends State<MapFab> with SingleTickerProviderStateMixin {
           Positioned.fill(
             child: GestureDetector(
               onTap: _toggle,
-              child: ColoredBox(
-                color: MolyColor.black.withValues(alpha: 0.3),
-              ),
+              child: ColoredBox(color: MolyColor.black.withValues(alpha: 0.3)),
             ),
           ),
         Positioned(
