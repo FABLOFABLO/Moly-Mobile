@@ -54,7 +54,7 @@ class _SignInPageState extends State<SignInPage> {
                                 Text('로그인', style: MolyTextStyle.headline3),
                               ],
                             ),
-                            const SizedBox(height: 34),
+                            const SizedBox(height: 40),
                             MolyTextField(
                               text: '닉네임',
                               hintText: '닉네임을 입력해주세요',
@@ -81,7 +81,7 @@ class _SignInPageState extends State<SignInPage> {
                                 },
                               ),
                             ),
-                            const SizedBox(height: 46),
+                            const SizedBox(height: 80),
                           ],
                         ),
                       ),

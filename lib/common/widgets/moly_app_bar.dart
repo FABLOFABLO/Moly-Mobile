@@ -27,8 +27,7 @@ class MolyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Widget? leadingWidget =
-    hasBack ? _buildBackButton(context) : leading;
+    final Widget? leadingWidget = hasBack ? _buildBackButton(context) : leading;
 
     return Material(
       color: Colors.transparent,
@@ -47,20 +46,10 @@ class MolyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
 
               if (title != null)
-                Center(
-                  child: Text(
-                    title!,
-                    style: MolyTextStyle.textMedium,
-                  ),
-                ),
+                Center(child: Text(title!, style: MolyTextStyle.textMedium)),
 
               if (actions != null)
-                Positioned(
-                  right: 12,
-                  child: Row(
-                    children: actions!,
-                  ),
-                ),
+                Positioned(right: 12, child: Row(children: actions!)),
             ],
           ),
         ),

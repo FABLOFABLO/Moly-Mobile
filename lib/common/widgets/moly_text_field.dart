@@ -15,7 +15,7 @@ class MolyTextField extends StatefulWidget {
   final bool hasError;
   final String errorText;
 
-  const MolyTextField( {
+  const MolyTextField({
     super.key,
     required this.text,
     required this.hintText,
@@ -91,7 +91,10 @@ class _MolyTextFieldState extends State<MolyTextField> {
                   ),
                 ),
                 hintText: widget.hintText,
-                hintStyle: const TextStyle(color: MolyColor.gray200, fontSize: 14),
+                hintStyle: const TextStyle(
+                  color: MolyColor.gray200,
+                  fontSize: 14,
+                ),
                 filled: true,
                 fillColor: MolyColor.button,
                 contentPadding: const EdgeInsets.symmetric(
@@ -128,7 +131,7 @@ class _MolyTextFieldState extends State<MolyTextField> {
               padding: const EdgeInsets.symmetric(vertical: 8),
               child: Row(
                 children: [
-                  Icon(Icons.error, color: MolyColor.error, size: 13),
+                  const Icon(Icons.error, color: MolyColor.error, size: 13),
                   const SizedBox(width: 2),
                   Text(
                     widget.errorText,
